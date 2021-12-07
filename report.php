@@ -73,8 +73,8 @@ class quiz_tomaetest_report extends quiz_default_report
                 $logintograde = new moodle_url('/mod/quiz/report/tomaetest/ssoTG.php');
                 echo "<a target='_blank' href='$logintopanel'>Click here to start TomaETest Monitor</a></br>";
                 $extradata = $record->extradata;
-                if(isset ($extradata["IDMatch"]) && $extradata["IDMatch"] === true && isset($extradata["TeacherID"])){
-                    if ($USER->id === $extradata["TeacherID"]){
+                if (isset ($extradata["IDMatch"]) && $extradata["IDMatch"] === true && isset($extradata["TeacherID"])) {
+                    if ($USER->id === $extradata["TeacherID"]) {
                         echo "<a target='_blank' href='$logintograde'>Click here to start TomaGrade.</a></br>";
                     }
                 };
