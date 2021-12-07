@@ -31,11 +31,6 @@ require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
 require_once($CFG->libdir . '/pagelib.php');
 require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 
-// require_once($CFG->dirroot . '/mod/quiz/report/responses/responses_options.php');
-// require_once($CFG->dirroot . '/mod/quiz/report/responses/responses_form.php');
-// require_once($CFG->dirroot . '/mod/quiz/report/responses/last_responses_table.php');
-// require_once($CFG->dirroot . '/mod/quiz/report/responses/first_or_all_responses_table.php');
-
 class quiz_tomaetest_report extends quiz_default_report
 {
 
@@ -78,7 +73,6 @@ class quiz_tomaetest_report extends quiz_default_report
                         echo "<a target='_blank' href='$logintograde'>Click here to start TomaGrade.</a></br>";
                     }
                 };
-                // var_dump()
                 echo "<p>The Exam Code is <b>" . $record->extradata["TETExamLink"] . "</b> .";
                 $table = new html_table();
                 $table->attributes['style'] = 'width:500px;';
