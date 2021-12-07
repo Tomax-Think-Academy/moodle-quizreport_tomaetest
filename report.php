@@ -81,8 +81,6 @@ class quiz_tomaetest_report extends quiz_default_report
                 // var_dump()
                 echo "<p>The Exam Code is <b>" . $record->extradata["TETExamLink"] . "</b> .";
                 $table = new html_table();
-                // $reflector = new \ReflectionClass('html_table');
-                // echo $reflector->getFileName();
                 $table->attributes['style'] = 'width:500px;';
                 $info = tomaetest_connection::getParticipantsList($record->extradata["TETID"]);
                 $table->head = ["Participant", "Integrity score"];
@@ -95,7 +93,8 @@ class quiz_tomaetest_report extends quiz_default_report
                     if (isset($participant["parExamAtts"]["TETExamParticipantUserScore"]["key"])) {
                         $score = $participant["parExamAtts"]["TETExamParticipantUserScore"]["key"];
                     }
-                    $logintoparticipant = new moodle_url('/mod/quiz/report/tomaetest/sso.php', array('id' => $this->quiz->id, 'parID' => $participantid));
+                    $logintoparticipant = new moodle_url('/mod/quiz/report/tomaetest/sso.php',
+                     array('id' => $this->quiz->id, 'parID' => $participantid));
                     $score = "<a target='_blank' href='$logintoparticipant'>$score</a>";
                     $table->data[] = array($participant["UserName"], $score);
                 }
