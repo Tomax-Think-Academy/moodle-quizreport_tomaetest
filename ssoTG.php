@@ -30,7 +30,7 @@ require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 $connection = new tet_plugin_tomagrade_connection;
 $result = $connection->teacherLogin($USER->id);
 
-if (!isset($result["Token"]) || !isset($result["UserID"])){
+if (!isset($result["Token"]) || !isset($result["UserID"])) {
     echo ("<script>alert('There was an error, Please contact a system administrator.');</script>");
     echo ("<script>window.close();</script>");
     exit();
