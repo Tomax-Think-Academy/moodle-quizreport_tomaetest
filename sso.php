@@ -35,7 +35,7 @@ $parid = isset($_GET["parID"]) ? $_GET["parID"] : null;
 $users = quizaccess_tomaetest_utils::getMoodleTeachers($id, $USER->id);
 $adminuser = quizaccess_tomaetest_utils::getMoodleTeachers(null, $USER->id);
 
-// if he is there ,sync first..
+// If he is there ,sync first.
 if (!empty($adminuser) || !empty($users)) {
     tomaetest_connection::syncToTomaETestFromDatabase($id);
 } else {
@@ -43,7 +43,7 @@ if (!empty($adminuser) || !empty($users)) {
     echo "<script>window.close();</script>";
     exit;
 }
-// if it is admin user.
+// If it is admin user.
 if (!empty($adminuser)) {
     // If it cant SSO, create the user, and then continue to SSO.
     $data = quizaccess_tomaetest_utils::createSystemUser($USER->id);
@@ -56,7 +56,7 @@ if (!empty($adminuser)) {
 $result = tomaetest_connection::sso($id, $USER->id, $parid);
 
 if ($result === false) {
-    // Check if admin priviliges
+    // Check if admin privileges.
     echo "<script>alert('No Permission.')</script>";
     echo "<script>window.close();</script>";
     exit;
