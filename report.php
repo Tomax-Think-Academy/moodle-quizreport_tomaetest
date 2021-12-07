@@ -114,8 +114,7 @@ class quiz_tomaetest_report extends quiz_default_report
         // echo "<a href=''>Click here to see advanced integrity report</a>";
     }
 
-    protected function quizreportgetstudentandattempts($quiz)
-    {
+    protected function quizreportgetstudentandattempts($quiz) {
         global $DB;
 
         // Construct the SQL.
