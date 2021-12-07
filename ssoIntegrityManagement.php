@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-//SSO Integrity Management
+// SSO Integrity Management.
 require_once(dirname(dirname(__FILE__)) . '../../../../config.php');
 defined('MOODLE_INTERNAL') || die();
 require_login();
@@ -36,13 +36,13 @@ if (empty($users)) {
     echo "<script>window.close();</script>";
     exit;
 }
-//Try to SSO.
+// Try to SSO.
 $result = tomaetest_connection::ssoIntegrityManagement($USER->id);
 if ($result !== false) {
     header("location: $result");
     exit;
 }
-//Create the System User if not exists.
+// Create the System User if not exists.
 $data = quizaccess_tomaetest_utils::createSystemUser($USER->id);
 
 if ($data !== true) {
