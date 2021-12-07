@@ -29,7 +29,7 @@ require_login();
 require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 global $DB, $CFG, $USER;
 
-// check if it is not an admin user.
+// Check if it is not an admin user.
 $users = quizaccess_tomaetest_utils::getMoodleAllowedIntegrityManagement($USER->id);
 if (empty($users)) {
     echo "<script>alert('No Permission.')</script>";
@@ -52,7 +52,6 @@ if ($data !== true) {
 }
 // SSO.
 $result = tomaetest_connection::ssoIntegrityManagement($USER->id);
-// var_dump($result);
 if ($result !== false) {
     header("location: $result");
     exit;
