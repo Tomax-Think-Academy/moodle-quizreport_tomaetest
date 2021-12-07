@@ -23,7 +23,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version  = 2021013100;
+$plugin->version  = 2021120700;
 $plugin->requires = 2010110800;
 $plugin->component = 'quiz_tomaetest';
 $plugin->maturity = MATURITY_STABLE;
