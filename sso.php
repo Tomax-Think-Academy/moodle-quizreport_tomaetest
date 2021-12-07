@@ -33,10 +33,10 @@ $parid = isset($_GET["parID"]) ? $_GET["parID"] : null;
 
 
 $users = quizaccess_tomaetest_utils::getMoodleTeachers($id, $USER->id);
-$adminUser = quizaccess_tomaetest_utils::getMoodleTeachers(null, $USER->id);
+$adminuser = quizaccess_tomaetest_utils::getMoodleTeachers(null, $USER->id);
 
 // if he is there ,sync first..
-if (!empty($adminUser) || !empty($users)) {
+if (!empty($adminuser) || !empty($users)) {
     tomaetest_connection::syncToTomaETestFromDatabase($id);
 } else {
     echo "<script>alert('No Permission.')</script>";
@@ -44,7 +44,7 @@ if (!empty($adminUser) || !empty($users)) {
     exit;
 }
 // if it is admin user.
-if (!empty($adminUser)) {
+if (!empty($adminuser)) {
     // If it cant SSO, create the user, and then continue to SSO.
     $data = quizaccess_tomaetest_utils::createSystemUser($USER->id);
     if ($data !== true) {
