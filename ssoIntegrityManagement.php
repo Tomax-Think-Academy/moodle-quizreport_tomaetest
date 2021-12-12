@@ -37,7 +37,7 @@ if (empty($users)) {
     exit;
 }
 // Try to SSO.
-$result = tomaetest_connection::ssoIntegrityManagement($USER->id);
+$result = tomaetest_connection::sso_integrity_management($USER->id);
 if ($result !== false) {
     header("location: $result");
     exit;
@@ -51,7 +51,7 @@ if ($data !== true) {
     exit;
 }
 // SSO.
-$result = tomaetest_connection::ssoIntegrityManagement($USER->id);
+$result = tomaetest_connection::sso_integrity_management($USER->id);
 if ($result !== false) {
     header("location: $result");
     exit;
