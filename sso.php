@@ -37,7 +37,7 @@ $adminuser = quizaccess_tomaetest_utils::getMoodleTeachers(null, $USER->id);
 
 // If he is there ,sync first.
 if (!empty($adminuser) || !empty($users)) {
-    tomaetest_connection::syncToTomaETestFromDatabase($id);
+    tomaetest_connection::sync_to_toma_etest_from_database($id);
 } else {
     echo "<script>alert('No Permission.')</script>";
     echo "<script>window.close();</script>";
