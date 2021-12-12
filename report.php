@@ -76,7 +76,7 @@ class quiz_tomaetest_report extends quiz_default_report
                 echo "<p>The Exam Code is <b>" . $record->extradata["TETExamLink"] . "</b> .";
                 $table = new html_table();
                 $table->attributes['style'] = 'width:500px;';
-                $info = tomaetest_connection::getParticipantsList($record->extradata["TETID"]);
+                $info = tomaetest_connection::get_participants_list($record->extradata["TETID"]);
                 $table->head = ["Participant", "Integrity score"];
                 foreach ($info["data"]["participants"] as $participant) {
                     $score = "Waiting for score";
