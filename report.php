@@ -45,7 +45,7 @@ class quiz_tomaetest_report extends quiz_default_report
         $this->course = $course;
 
         $this->print_header_and_tabs($cm, $course, $quiz, 'archive');
-        if (quizaccess_tomaetest_utils::getMoodleTeachers($quiz->id, $USER->id)) {
+        if (quizaccess_tomaetest_utils::get_moodle_teachers($quiz->id, $USER->id)) {
 
             $this->display_archive($quiz);
             return true;
@@ -60,7 +60,7 @@ class quiz_tomaetest_report extends quiz_default_report
      */
     protected function display_archive($quiz) {
         global $OUTPUT, $PAGE, $USER;
-        if (quizaccess_tomaetest_utils::isETestPluginEnabled()) {
+        if (quizaccess_tomaetest_utils::is_etest_plugin_enabled()) {
 
             $record = quizaccess_tomaetest_utils::get_etest_quiz($quiz->id);
             if ($record != false) {

@@ -32,8 +32,8 @@ $id = $_GET["id"];
 $parid = isset($_GET["parID"]) ? $_GET["parID"] : null;
 
 
-$users = quizaccess_tomaetest_utils::getMoodleTeachers($id, $USER->id);
-$adminuser = quizaccess_tomaetest_utils::getMoodleTeachers(null, $USER->id);
+$users = quizaccess_tomaetest_utils::get_moodle_teachers($id, $USER->id);
+$adminuser = quizaccess_tomaetest_utils::get_moodle_teachers(null, $USER->id);
 
 // If he is there ,sync first.
 if (!empty($adminuser) || !empty($users)) {
@@ -46,7 +46,7 @@ if (!empty($adminuser) || !empty($users)) {
 // If it is admin user.
 if (!empty($adminuser)) {
     // If it cant SSO, create the user, and then continue to SSO.
-    $data = quizaccess_tomaetest_utils::createSystemUser($USER->id);
+    $data = quizaccess_tomaetest_utils::create_system_user($USER->id);
     if ($data !== true) {
         echo "<script>alert('$data')</script>";
         echo "<script>window.close();</script>";

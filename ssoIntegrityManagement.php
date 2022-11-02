@@ -30,7 +30,7 @@ require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 global $DB, $CFG, $USER;
 
 // Check if it is not an admin user.
-$users = quizaccess_tomaetest_utils::getMoodleAllowedIntegrityManagement($USER->id);
+$users = quizaccess_tomaetest_utils::get_moodle_allowed_integrity_management($USER->id);
 if (empty($users)) {
     echo "<script>alert('No Permission.')</script>";
     echo "<script>window.close();</script>";
@@ -43,7 +43,7 @@ if ($result !== false) {
     exit;
 }
 // Create the System User if not exists.
-$data = quizaccess_tomaetest_utils::createSystemUser($USER->id);
+$data = quizaccess_tomaetest_utils::create_system_user($USER->id);
 
 if ($data !== true) {
     echo "<script>alert('$data')</script>";
