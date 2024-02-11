@@ -70,8 +70,8 @@ configure only if using the Scanning module
 	2. Monitor Recording - The computer’s screen will be recorded and later on analyzed using an AI.
 
 ### <u>TomaETest Dashboard Permission</u>
-1. In order to allow certain roles to access the TomaETest Monitor, please allow the following capability “mod/quizaccess_tomaetest:viewTomaETestMonitor” to the appropriate roles
-2. In order to allow certain roles to access the TomaETest Advanced Integrity Report, please allow the following capability “mod/quizaccess_tomaetest:viewTomaETestAIR” to the appropriate roles
+1. In order to allow certain roles to access the TomaETest Monitor, please allow the following capability “mod/quizaccess_tomaetest:viewtomaetestmonitor to the appropriate roles
+2. In order to allow certain roles to access the TomaETest Advanced Integrity Report, please allow the following capability “mod/quizaccess_tomaetest:viewtomaetestair to the appropriate roles
 
 # Usage
 ## Creating a Quiz
