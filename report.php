@@ -24,14 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/mod/quiz/report/attemptsreport.php');
-require_once($CFG->dirroot . '/mod/quiz/report/reportlib.php');
-require_once($CFG->dirroot . '/mod/quiz/locallib.php');
-require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
-require_once($CFG->libdir . '/pagelib.php');
+// require_once($CFG->dirroot . '/mod/quiz/report/attemptsreport.php');
+// require_once($CFG->dirroot . '/mod/quiz/report/reportlib.php');
+// require_once($CFG->dirroot . '/mod/quiz/locallib.php');
+// require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
+// require_once($CFG->libdir . '/pagelib.php');
 require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 
-class quiz_tomaetest_report extends quiz_default_report
+class quiz_tomaetest_report extends mod_quiz\local\reports\report_base
 {
 
     protected $cm;
