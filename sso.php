@@ -28,8 +28,8 @@ require_login();
 require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 global $DB, $CFG, $USER;
 
-$id = $_GET["id"];
-$parid = isset($_GET["parID"]) ? $_GET["parID"] : null;
+$id = optional_param('id', false, PARAM_INT);
+$parid = optional_param('parID', null, PARAM_INT);
 
 
 $users = quizaccess_tomaetest_utils::get_moodle_teachers($id, $USER->id);
