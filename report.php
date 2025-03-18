@@ -24,14 +24,21 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-// require_once($CFG->dirroot . '/mod/quiz/report/attemptsreport.php');
-// require_once($CFG->dirroot . '/mod/quiz/report/reportlib.php');
-// require_once($CFG->dirroot . '/mod/quiz/locallib.php');
-// require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
-// require_once($CFG->libdir . '/pagelib.php');
 require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
+// This work-around is required until Moodle 4.2.
+if (class_exists('\mod_quiz\local\reports\report_base')) {
+    class_alias('\mod_quiz\local\reports\report_base', '\report_base_parent_class_alias');
+} else {
+    require_once($CFG->dirroot . '/mod/quiz/accessrule/accessrulebase.php');
+    require_once($CFG->dirroot . '/mod/quiz/report/attemptsreport.php');
+    require_once($CFG->dirroot . '/mod/quiz/report/reportlib.php');
+    require_once($CFG->dirroot . '/mod/quiz/locallib.php');
+    require_once($CFG->dirroot . '/mod/quiz/attemptlib.php');
+    require_once($CFG->libdir . '/pagelib.php');
+    class_alias('\quiz_default_report', '\report_base_parent_class_alias');
+}
 
-class quiz_tomaetest_report extends mod_quiz\local\reports\report_base
+class quiz_tomaetest_report extends report_base_parent_class_alias
 {
 
     protected $cm;
