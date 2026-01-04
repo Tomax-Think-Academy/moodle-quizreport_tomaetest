@@ -28,7 +28,13 @@ require_once($CFG->dirroot . "/mod/quiz/accessrule/tomaetest/rule.php");
 
 
 $connection = new tet_plugin_tomagrade_connection;
-$result = $connection->teacherLogin($USER->id);
+$systemcontext = context_system::instance();
+if (!has_capability("mod/quizaccess_tomaetest:viewtomaetestmonitor", $systemcontext)) {
+    echo ("<script>alert('You do not have permissions to access this page.');</script>");
+    echo ("<script>window.close();</script>");
+    exit();
+}
+$result = $connection->teacher_login($USER->id);
 
 if (!isset($result["Token"]) || !isset($result["UserID"])) {
     echo ("<script>alert('There was an error, Please contact a system administrator.');</script>");
